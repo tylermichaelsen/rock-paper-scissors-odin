@@ -23,7 +23,11 @@ function playRound(playerSelection, computerSelection) {
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     } else if(playerSelection.toLowerCase() === 'paper') {
-        
+        if(computerSelection === 'Scissors') {
+            return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        } else {
+            return `You Win! ${playerSelection} beats ${computerSelection}`;
+        }
     } else {
        
     }
