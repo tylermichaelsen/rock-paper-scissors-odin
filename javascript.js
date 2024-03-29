@@ -14,7 +14,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if(playerSelection === computerSelection) {
+    if(playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         return `Draw! Both players chose ${playerSelection}!`;
     } else if(playerSelection.toLowerCase() === 'rock' ) {
         if(computerSelection === 'Paper') {
