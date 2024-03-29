@@ -49,13 +49,13 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playGame() {   
-    let playerSelection = prompt("Please enter rock, paper, or scissors.");
 
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(playRound(playerSelection, computerSelection));
+
+    console.log(playRound(prompt("Please enter rock, paper, or scissors."), computerSelection));
+    console.log(playRound(prompt("Please enter rock, paper, or scissors."), computerSelection));
+    console.log(playRound(prompt("Please enter rock, paper, or scissors."), computerSelection));
+    console.log(playRound(prompt("Please enter rock, paper, or scissors."), computerSelection));
+    console.log(playRound(prompt("Please enter rock, paper, or scissors."), computerSelection));
 
     if(playerScore > computerScore) {
         console.log(`You beat the computer!`);
