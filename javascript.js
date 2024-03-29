@@ -64,3 +64,5 @@ function playGame() {
         console.log(`You tied with the computer!`);
     }
 }
+
+playGame();
