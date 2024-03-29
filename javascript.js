@@ -17,7 +17,11 @@ function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
         return `Draw! Both players chose ${playerSelection}!`;
     } else if(playerSelection.toLowerCase() === 'rock' ) {
-       
+        if(computerSelection === 'Paper') {
+            return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        } else {
+            return `You Win! ${playerSelection} beats ${computerSelection}`;
+        }
     } else if(playerSelection.toLowerCase() === 'paper') {
         
     } else {
