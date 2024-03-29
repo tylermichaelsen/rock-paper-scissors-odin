@@ -50,7 +50,6 @@ let computerScore = 0;
 
 function playGame() {   
 
-
     console.log(playRound(prompt("Please enter rock, paper, or scissors."), computerSelection));
     console.log(playRound(prompt("Please enter rock, paper, or scissors."), computerSelection));
     console.log(playRound(prompt("Please enter rock, paper, or scissors."), computerSelection));
