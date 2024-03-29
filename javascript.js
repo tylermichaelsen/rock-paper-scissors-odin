@@ -18,20 +18,26 @@ function playRound(playerSelection, computerSelection) {
         return `Draw! Both players chose ${playerSelection}!`;
     } else if(playerSelection.toLowerCase() === 'rock' ) {
         if(computerSelection === 'Paper') {
+            computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
+            playerScore++;
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     } else if(playerSelection.toLowerCase() === 'paper') {
         if(computerSelection === 'Scissors') {
+            computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
+            playerScore++;
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     } else {
         if(computerSelection === 'Rock') {
+            computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`
         } else {
+            playerScore++;
             return `You Win! ${playerSelection} beats ${computerSelection}`
         }
     }
@@ -39,6 +45,8 @@ function playRound(playerSelection, computerSelection) {
 
 
 const computerSelection = getComputerChoice();
+let playerScore = 0;
+let computerScore = 0;
 
 function playGame() {   
     let playerSelection = prompt("Please enter rock, paper, or scissors.");
