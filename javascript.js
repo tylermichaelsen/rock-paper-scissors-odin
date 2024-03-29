@@ -13,4 +13,5 @@ function getComputerChoice() {
     }
 }
 
-let playerSelection = prompt("Please enter rock, paper, or scissors.");
+const playerSelection = prompt("Please enter rock, paper, or scissors.");
+const computerSelection = getComputerChoice();
