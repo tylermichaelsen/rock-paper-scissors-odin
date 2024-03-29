@@ -16,7 +16,13 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
         return `Draw! Both players chose ${playerSelection}!`;
-    } 
+    } else if(playerSelection.toLowerCase() === 'rock' ) {
+       
+    } else if(playerSelection.toLowerCase() === 'paper') {
+        
+    } else {
+       
+    }
 }
 
 const playerSelection = prompt("Please enter rock, paper, or scissors.");
