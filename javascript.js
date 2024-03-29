@@ -29,7 +29,11 @@ function playRound(playerSelection, computerSelection) {
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     } else {
-       
+        if(computerSelection === 'Rock') {
+            return `You Lose! ${computerSelection} beats ${playerSelection}`
+        } else {
+            return `You Win! ${playerSelection} beats ${computerSelection}`
+        }
     }
 }
 
