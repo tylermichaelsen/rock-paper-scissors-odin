@@ -44,7 +44,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-const computerSelection = getComputerChoice();
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -57,4 +57,11 @@ function playGame() {
     console.log(playRound(playerSelection, computerSelection));
     console.log(playRound(playerSelection, computerSelection));
 
+    if(playerScore > computerScore) {
+        console.log(`You beat the computer!`);
+    } else if(computerScore > playerScore) {
+        console.log(`You lost to the computer!`);
+    } else {
+        console.log(`You tied with the computer!`);
+    }
 }
