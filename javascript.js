@@ -12,3 +12,5 @@ function getComputerChoice() {
             return null;
     }
 }
+
+let playerSelection = prompt("Please enter rock, paper, or scissors.");
