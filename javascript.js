@@ -54,6 +54,10 @@ function playGame() {
     const paperBtn = document.createElement('button');
     const scissorsBtn = document.createElement('button');
 
+    rockBtn.textContent = 'Rock';
+    paperBtn.textContent = 'Paper';
+    scissorsBtn.textContent = 'Scissors';
+
     rockBtn.addEventListener('click', function() {
         playerSelection = 'rock';
     });
@@ -69,7 +73,6 @@ function playGame() {
     const resultsDiv = document.createElement('div');
     const scoreComputer = document.createElement('p');
     const scorePlayer = document.createElement('p');
-
 
     if(playerScore > computerScore) {
         (`You beat the computer!`);
