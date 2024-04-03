@@ -65,6 +65,8 @@ function playGame() {
         playerSelection = 'scissors';
     });
 
+    const resultsDiv = document.createElement('div');
+
     if(playerScore > computerScore) {
         console.log(`You beat the computer!`);
     } else if(computerScore > playerScore) {
