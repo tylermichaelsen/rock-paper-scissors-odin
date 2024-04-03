@@ -49,6 +49,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playGame() {   
+    const body = document.querySelector('body');
     const rockBtn = document.createElement('button');
     const paperBtn = document.createElement('button');
     const scissorsBtn = document.createElement('button');
