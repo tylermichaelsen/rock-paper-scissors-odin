@@ -49,7 +49,9 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playGame() {   
-
+    const rockBtn = document.createElement('button');
+    const paperBtn = document.createElement('button');
+    const scissorsBtn = document.createElement('button');
 
     if(playerScore > computerScore) {
         console.log(`You beat the computer!`);
