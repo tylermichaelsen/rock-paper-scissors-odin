@@ -70,6 +70,7 @@ function playGame() {
     const scoreComputer = document.createElement('p');
     const scorePlayer = document.createElement('p');
 
+
     if(playerScore > computerScore) {
         (`You beat the computer!`);
     } else if(computerScore > playerScore) {
@@ -77,6 +78,13 @@ function playGame() {
     } else {
         console.log(`You tied with the computer!`);
     }
+
+    body.appendChild(rockBtn);
+    body.appendChild(paperBtn);
+    body.appendChild(scissorsBtn);
+    body.appendChild(resultsDiv);
+    resultsDiv.appendChild(scoreComputer);
+    resultsDiv.appendChild(scorePlayer);
 }
 
 playGame();
