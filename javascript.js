@@ -67,9 +67,11 @@ function playGame() {
     });
 
     const resultsDiv = document.createElement('div');
+    const scoreComputer = document.createElement('p');
+    const scorePlayer = document.createElement('p');
 
     if(playerScore > computerScore) {
-        console.log(`You beat the computer!`);
+        (`You beat the computer!`);
     } else if(computerScore > playerScore) {
         console.log(`You lost to the computer!`);
     } else {
