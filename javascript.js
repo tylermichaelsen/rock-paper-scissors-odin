@@ -87,6 +87,7 @@ function playGame() {
     body.appendChild(paperBtn);
     body.appendChild(scissorsBtn);
     body.appendChild(resultsDiv);
+    resultsDiv.appendChild(roundPlayed);
     resultsDiv.appendChild(scoreComputer);
     resultsDiv.appendChild(scorePlayer);
 }
