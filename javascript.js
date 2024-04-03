@@ -61,23 +61,22 @@ function playGame() {
     scissorsBtn.textContent = 'Scissors';
 
     rockBtn.addEventListener('click', function() {
-        playerSelection = 'rock';
+        roundPlayed.textContent = playRound('rock', getComputerChoice());
     });
 
     paperBtn.addEventListener('click', function() {
-        playerSelection = 'paper';
+        roundPlayed.textContent = playRound('paper', getComputerChoice());
     });
 
     scissorsBtn.addEventListener('click', function() {
-        playerSelection = 'scissors';
+        roundPlayed.textContent = playRound('scissors', getComputerChoice());
     });
 
     const resultsDiv = document.createElement('div');
     const roundPlayed = document.createElement('p');
-    const scoreComputer = document.createElement('p');
-    const scorePlayer = document.createElement('p');
+    const score = document.createElement('p');
 
-    playRound(playerSelection, computerSelection);
+    score.textContent = `Computer: ${computerScore} | Player: ${playerScore}`
 
     if(playerScore > computerScore) {
         (`You beat the computer!`);
@@ -92,8 +91,7 @@ function playGame() {
     body.appendChild(scissorsBtn);
     body.appendChild(resultsDiv);
     resultsDiv.appendChild(roundPlayed);
-    resultsDiv.appendChild(scoreComputer);
-    resultsDiv.appendChild(scorePlayer);
+    resultsDiv.appendChild(score);
 }
 
 playGame();
