@@ -71,6 +71,7 @@ function playGame() {
     });
 
     const resultsDiv = document.createElement('div');
+    const roundPlayed = document.createElement('p');
     const scoreComputer = document.createElement('p');
     const scorePlayer = document.createElement('p');
 
