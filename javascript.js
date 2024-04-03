@@ -53,6 +53,18 @@ function playGame() {
     const paperBtn = document.createElement('button');
     const scissorsBtn = document.createElement('button');
 
+    rockBtn.addEventListener('click', function() {
+        playerSelection = 'rock';
+    });
+
+    paperBtn.addEventListener('click', function() {
+        playerSelection = 'paper';
+    });
+
+    scissorsBtn.addEventListener('click', function() {
+        playerSelection = 'scissors';
+    });
+
     if(playerScore > computerScore) {
         console.log(`You beat the computer!`);
     } else if(computerScore > playerScore) {
