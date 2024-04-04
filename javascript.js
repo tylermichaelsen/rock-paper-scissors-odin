@@ -43,8 +43,15 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
+        return `Draw! Both players chose ${playerSelection}`;
+    } else if(playerSelection === 'rock') {
+
+    } else if(playerSelection === 'paper') {
+
+    } else {
         
     }
+    
 }
 
 /*
