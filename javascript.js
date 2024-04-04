@@ -4,6 +4,8 @@ const paperBtn = document.createElement('button');
 const scissorsBtn = document.createElement('button');
 
 let playerSelection = '';
+let playerScore = 0;
+let computerScore = 0;
 
 rockBtn.textContent = 'Rock';
 paperBtn.textContent = 'Paper';
@@ -45,11 +47,15 @@ function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
         return `Draw! Both players chose ${playerSelection}`;
     } else if(playerSelection === 'rock') {
-
+        if(computerSelection === 'paper') {
+            return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        } else {
+            return `You Win! ${playerSelection} beats ${computerSelection}`
+        }
     } else if(playerSelection === 'paper') {
 
     } else {
-        
+
     }
     
 }
