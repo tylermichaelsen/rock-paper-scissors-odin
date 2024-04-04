@@ -6,22 +6,11 @@ const scissorsBtn = document.createElement('button');
 let playerSelection = '';
 let playerScore = 0;
 let computerScore = 0;
+let rounds = 5;
 
 rockBtn.textContent = 'Rock';
 paperBtn.textContent = 'Paper';
 scissorsBtn.textContent = 'Scissors';
-
-rockBtn.addEventListener('click', function() {
-    roundPlayed.textContent = playRound('rock', getComputerChoice());
-});
-
-paperBtn.addEventListener('click', function() {
-    roundPlayed.textContent = playRound('paper', getComputerChoice());
-});
-
-scissorsBtn.addEventListener('click', function() {
-    roundPlayed.textContent = playRound('scissors', getComputerChoice());
-});
 
 const resultsDiv = document.createElement('div');
 const roundPlayed = document.createElement('p');
@@ -46,16 +35,16 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
         return `Draw! Both players chose ${playerSelection}`;
-    } else if(playerSelection === 'rock') {
-        if(computerSelection === 'paper') {
+    } else if(playerSelection === 'Rock') {
+        if(computerSelection === 'Paper') {
             computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
             playerScore++;
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
-    } else if(playerSelection === 'paper') {
-        if(computerSelection === 'scissors') {
+    } else if(playerSelection === 'Paper') {
+        if(computerSelection === 'Scissors') {
             computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
@@ -63,7 +52,7 @@ function playRound(playerSelection, computerSelection) {
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     } else {
-        if(computerSelection === 'rock') {
+        if(computerSelection === 'Rock') {
             computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
@@ -73,6 +62,42 @@ function playRound(playerSelection, computerSelection) {
     }
     
 }
+
+
+function playGame() {
+    for(let i = 1; playerScore < rounds || computerScore < rounds; i++) {
+        rockBtn.addEventListener('click', function() {
+            roundPlayed.textContent = playRound('Rock', getComputerChoice());
+            console.log(`player: ${playerScore} || computer: ${computerScore}`);
+        });
+        
+        paperBtn.addEventListener('click', function() {
+            roundPlayed.textContent = playRound('Paper', getComputerChoice());
+            console.log(`player: ${playerScore} || computer: ${computerScore}`);
+        });
+        
+        scissorsBtn.addEventListener('click', function() {
+            roundPlayed.textContent = playRound('Scissors', getComputerChoice());
+            console.log(`player: ${playerScore} || computer: ${computerScore}`);
+        });
+    }
+
+    if(playerScore === rounds) {
+        score.textContent = `You have beaten the computer`;
+    } else if (computerScore === rounds) {
+        score.textContent = 'You have lost to the computer';
+    } else {
+        
+    }
+}
+
+body.appendChild(rockBtn);
+body.appendChild(paperBtn);
+body.appendChild(scissorsBtn);
+body.appendChild(resultsDiv);
+resultsDiv.appendChild(roundPlayed);
+resultsDiv.appendChild(score);
+
 
 /*
 Old playRound function 
@@ -158,4 +183,3 @@ function playGame() {
     resultsDiv.appendChild(score);
 }
 */
-playGame();
