@@ -1,3 +1,31 @@
+const body = document.querySelector('body');
+const rockBtn = document.createElement('button');
+const paperBtn = document.createElement('button');
+const scissorsBtn = document.createElement('button');
+
+let playerSelection = '';
+
+rockBtn.textContent = 'Rock';
+paperBtn.textContent = 'Paper';
+scissorsBtn.textContent = 'Scissors';
+
+rockBtn.addEventListener('click', function() {
+    roundPlayed.textContent = playRound('rock', getComputerChoice());
+});
+
+paperBtn.addEventListener('click', function() {
+    roundPlayed.textContent = playRound('paper', getComputerChoice());
+});
+
+scissorsBtn.addEventListener('click', function() {
+    roundPlayed.textContent = playRound('scissors', getComputerChoice());
+});
+
+const resultsDiv = document.createElement('div');
+const roundPlayed = document.createElement('p');
+const score = document.createElement('p');
+
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * (4 - 1) + 1);   
 
@@ -12,6 +40,15 @@ function getComputerChoice() {
             return null;
     }
 }
+
+function playRound(playerSelection, computerSelection) {
+    if(playerSelection === computerSelection) {
+        
+    }
+}
+
+/*
+Old playRound function 
 
 function playRound(playerSelection, computerSelection) {
     if(playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
@@ -93,5 +130,5 @@ function playGame() {
     resultsDiv.appendChild(roundPlayed);
     resultsDiv.appendChild(score);
 }
-
+*/
 playGame();
