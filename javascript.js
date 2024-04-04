@@ -50,12 +50,20 @@ function playRound(playerSelection, computerSelection) {
         if(computerSelection === 'paper') {
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
-            return `You Win! ${playerSelection} beats ${computerSelection}`
+            return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     } else if(playerSelection === 'paper') {
-
+        if(computerSelection === 'scissors') {
+            return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        } else {
+            return `You Win! ${playerSelection} beats ${computerSelection}`;
+        }
     } else {
-
+        if(computerSelection === 'rock') {
+            return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        } else {
+            return `You Win! ${playerSelection} beats ${computerSelection}`;
+        }
     }
     
 }
