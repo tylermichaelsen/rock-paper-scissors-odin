@@ -48,20 +48,26 @@ function playRound(playerSelection, computerSelection) {
         return `Draw! Both players chose ${playerSelection}`;
     } else if(playerSelection === 'rock') {
         if(computerSelection === 'paper') {
+            computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
+            playerScore++;
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     } else if(playerSelection === 'paper') {
         if(computerSelection === 'scissors') {
+            computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
+            playerScore++;
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     } else {
         if(computerSelection === 'rock') {
+            computerScore++;
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         } else {
+            playerScore++;
             return `You Win! ${playerSelection} beats ${computerSelection}`;
         }
     }
