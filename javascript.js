@@ -15,6 +15,7 @@ scissorsBtn.textContent = 'Scissors';
 const resultsDiv = document.createElement('div');
 const roundPlayed = document.createElement('p');
 const score = document.createElement('p');
+const results = document.createElement('p');
 
 
 function getComputerChoice() {
@@ -65,36 +66,45 @@ function playRound(playerSelection, computerSelection) {
 
 
 function playGame() {
-    for(let i = 1; playerScore < rounds || computerScore < rounds; i++) {
+    
+    if(playerScore === rounds) {
+        score.textContent = `You have beaten the computer`;
+        console.log("playerwon");
+    } else if (computerScore === rounds) {
+        score.textContent = 'You have lost to the computer';
+        console.log("cpuwon");
+    } else {
         rockBtn.addEventListener('click', function() {
             roundPlayed.textContent = playRound('Rock', getComputerChoice());
-            console.log(`player: ${playerScore} || computer: ${computerScore}`);
+            score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
         });
         
         paperBtn.addEventListener('click', function() {
             roundPlayed.textContent = playRound('Paper', getComputerChoice());
-            console.log(`player: ${playerScore} || computer: ${computerScore}`);
+            score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
         });
         
         scissorsBtn.addEventListener('click', function() {
             roundPlayed.textContent = playRound('Scissors', getComputerChoice());
-            console.log(`player: ${playerScore} || computer: ${computerScore}`);
+            score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
         });
-    }
-
-    if(playerScore === rounds) {
-        score.textContent = `You have beaten the computer`;
-    } else if (computerScore === rounds) {
-        score.textContent = 'You have lost to the computer';
-    } else {
-        
     }
 }
 
+if(playerScore === rounds) {
+    score.textContent = `You have beaten the computer`;
+    console.log("playerwon");
+} else if (computerScore === rounds) {
+    score.textContent = 'You have lost to the computer';
+    console.log("cpuwon");
+}
+
+playGame();
 body.appendChild(rockBtn);
 body.appendChild(paperBtn);
 body.appendChild(scissorsBtn);
 body.appendChild(resultsDiv);
+resultsDiv.appendChild(results);
 resultsDiv.appendChild(roundPlayed);
 resultsDiv.appendChild(score);
 
